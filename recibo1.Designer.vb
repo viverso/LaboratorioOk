@@ -118,12 +118,14 @@ Partial Class Recibo1
         Me.btnNuevo = New System.Windows.Forms.Button
         Me.txtObservaciones = New System.Windows.Forms.TextBox
         Me.Label28 = New System.Windows.Forms.Label
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox
         Me.PanelLiquidar.SuspendLayout()
         Me.PanelFinal.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label21
@@ -163,6 +165,7 @@ Partial Class Recibo1
         '
         Me.txtestadorecib.AutoSize = True
         Me.txtestadorecib.Font = New System.Drawing.Font("Microsoft Sans Serif", 30.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtestadorecib.ForeColor = System.Drawing.Color.MediumBlue
         Me.txtestadorecib.Location = New System.Drawing.Point(459, 579)
         Me.txtestadorecib.Name = "txtestadorecib"
         Me.txtestadorecib.Size = New System.Drawing.Size(95, 46)
@@ -276,7 +279,7 @@ Partial Class Recibo1
         Me.txtSexo.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSexo.Location = New System.Drawing.Point(70, 96)
         Me.txtSexo.Name = "txtSexo"
-        Me.txtSexo.Size = New System.Drawing.Size(206, 21)
+        Me.txtSexo.Size = New System.Drawing.Size(193, 21)
         Me.txtSexo.TabIndex = 5
         '
         'lblfoliorecibo
@@ -336,11 +339,11 @@ Partial Class Recibo1
         '
         Me.Label29.AutoSize = True
         Me.Label29.BackColor = System.Drawing.Color.Transparent
-        Me.Label29.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label29.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label29.Location = New System.Drawing.Point(12, 351)
+        Me.Label29.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label29.ForeColor = System.Drawing.Color.LightSteelBlue
+        Me.Label29.Location = New System.Drawing.Point(0, 327)
         Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(443, 13)
+        Me.Label29.Size = New System.Drawing.Size(527, 13)
         Me.Label29.TabIndex = 6
         Me.Label29.Text = "LIQUIDACION ... LIQUIDACION ....  LIQUIDACION ... LIQUIDICACION .... LIQUIDACION " & _
             "..."
@@ -469,7 +472,7 @@ Partial Class Recibo1
         'txtSuma
         '
         Me.txtSuma.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSuma.Location = New System.Drawing.Point(1056, 441)
+        Me.txtSuma.Location = New System.Drawing.Point(111, 21)
         Me.txtSuma.Name = "txtSuma"
         Me.txtSuma.Size = New System.Drawing.Size(160, 26)
         Me.txtSuma.TabIndex = 103
@@ -478,8 +481,9 @@ Partial Class Recibo1
         'Label16
         '
         Me.Label16.AutoSize = True
+        Me.Label16.BackColor = System.Drawing.Color.Transparent
         Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(994, 441)
+        Me.Label16.Location = New System.Drawing.Point(49, 21)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(60, 20)
         Me.Label16.TabIndex = 102
@@ -516,11 +520,11 @@ Partial Class Recibo1
         '
         Me.Label31.AutoSize = True
         Me.Label31.BackColor = System.Drawing.Color.Transparent
-        Me.Label31.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label31.ForeColor = System.Drawing.SystemColors.InfoText
+        Me.Label31.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label31.ForeColor = System.Drawing.Color.LightSteelBlue
         Me.Label31.Location = New System.Drawing.Point(-4, 1)
         Me.Label31.Name = "Label31"
-        Me.Label31.Size = New System.Drawing.Size(652, 13)
+        Me.Label31.Size = New System.Drawing.Size(767, 16)
         Me.Label31.TabIndex = 14
         Me.Label31.Text = "PAGO/ANTICIPO ....   PAGO/ANTICIPO ....   PAGO/ANTICIPO   .....   PAGO/ANTICIPO ." & _
             "..   PAGO/ANTICIPO   .....   PAGO/ANTICIPO"
@@ -529,11 +533,11 @@ Partial Class Recibo1
         '
         Me.Label30.AutoSize = True
         Me.Label30.BackColor = System.Drawing.Color.Transparent
-        Me.Label30.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label30.ForeColor = System.Drawing.SystemColors.InfoText
-        Me.Label30.Location = New System.Drawing.Point(-1, 423)
+        Me.Label30.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label30.ForeColor = System.Drawing.Color.LightSteelBlue
+        Me.Label30.Location = New System.Drawing.Point(1, 412)
         Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(652, 13)
+        Me.Label30.Size = New System.Drawing.Size(775, 13)
         Me.Label30.TabIndex = 14
         Me.Label30.Text = "PAGO/ANTICIPO ....   PAGO/ANTICIPO ....   PAGO/ANTICIPO   .....   PAGO/ANTICIPO ." & _
             "..   PAGO/ANTICIPO   .....   PAGO/ANTICIPO"
@@ -686,7 +690,7 @@ Partial Class Recibo1
         'TxtDescuento
         '
         Me.TxtDescuento.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtDescuento.Location = New System.Drawing.Point(1056, 473)
+        Me.TxtDescuento.Location = New System.Drawing.Point(111, 53)
         Me.TxtDescuento.Name = "TxtDescuento"
         Me.TxtDescuento.Size = New System.Drawing.Size(160, 26)
         Me.TxtDescuento.TabIndex = 91
@@ -695,7 +699,7 @@ Partial Class Recibo1
         'TxtSubtotal
         '
         Me.TxtSubtotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtSubtotal.Location = New System.Drawing.Point(1057, 510)
+        Me.TxtSubtotal.Location = New System.Drawing.Point(112, 90)
         Me.TxtSubtotal.Name = "TxtSubtotal"
         Me.TxtSubtotal.Size = New System.Drawing.Size(160, 26)
         Me.TxtSubtotal.TabIndex = 90
@@ -704,8 +708,9 @@ Partial Class Recibo1
         'Label10
         '
         Me.Label10.AutoSize = True
+        Me.Label10.BackColor = System.Drawing.Color.Transparent
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(1000, 548)
+        Me.Label10.Location = New System.Drawing.Point(55, 128)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(54, 20)
         Me.Label10.TabIndex = 89
@@ -725,8 +730,9 @@ Partial Class Recibo1
         'Label12
         '
         Me.Label12.AutoSize = True
+        Me.Label12.BackColor = System.Drawing.Color.Transparent
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(953, 476)
+        Me.Label12.Location = New System.Drawing.Point(8, 56)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(101, 20)
         Me.Label12.TabIndex = 87
@@ -735,8 +741,9 @@ Partial Class Recibo1
         'Label14
         '
         Me.Label14.AutoSize = True
+        Me.Label14.BackColor = System.Drawing.Color.Transparent
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(964, 512)
+        Me.Label14.Location = New System.Drawing.Point(19, 92)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(91, 20)
         Me.Label14.TabIndex = 86
@@ -769,7 +776,7 @@ Partial Class Recibo1
         'TxtTotal
         '
         Me.TxtTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtTotal.Location = New System.Drawing.Point(1056, 545)
+        Me.TxtTotal.Location = New System.Drawing.Point(111, 125)
         Me.TxtTotal.Name = "TxtTotal"
         Me.TxtTotal.Size = New System.Drawing.Size(160, 26)
         Me.TxtTotal.TabIndex = 93
@@ -928,7 +935,7 @@ Partial Class Recibo1
         Me.txtAdeudo.AutoSize = True
         Me.txtAdeudo.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtAdeudo.ForeColor = System.Drawing.Color.Navy
-        Me.txtAdeudo.Location = New System.Drawing.Point(511, 583)
+        Me.txtAdeudo.Location = New System.Drawing.Point(517, 583)
         Me.txtAdeudo.Name = "txtAdeudo"
         Me.txtAdeudo.Size = New System.Drawing.Size(88, 39)
         Me.txtAdeudo.TabIndex = 82
@@ -1055,6 +1062,9 @@ Partial Class Recibo1
         '
         'TxtCiudad
         '
+        Me.TxtCiudad.AutoCompleteCustomSource.AddRange(New String() {"TEHUACAN", "MIAHUATLAN", "SAN DIEGO CHALMA", "ALTEPEXI", "CHILAC", "SAN PEDRO ACOQUIACO", "SAN LORENZO TEOTIPILCO", "SAN VICENTE FERRER", "SAN NICOLAS TETITZINTLA", "TEOTITLAN DEL CAMINO", "CHAZUMBA", "HUAJUAPAN DE LEON", "SAN BARTOLO TEONTEPEC", "SANTA MARIA COAPAN", "HUAUTLA DE JIMENEZ", "OAXACA", "AJALPAN", "SANTA CRUZ ACAPA", "SAN SEBASTIAN ZINACATEPEC", "COYOMEAPAN", "VICENTE GUERRERO", "AZUMBILLA", "SAN CRISTOBAL TEPETEOPAN"})
+        Me.TxtCiudad.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.TxtCiudad.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
         Me.TxtCiudad.BackColor = System.Drawing.SystemColors.Info
         Me.TxtCiudad.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtCiudad.Location = New System.Drawing.Point(70, 59)
@@ -1181,12 +1191,30 @@ Partial Class Recibo1
         Me.Label28.TabIndex = 116
         Me.Label28.Text = "OBSERVACIONES:"
         '
+        'GroupBox3
+        '
+        Me.GroupBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.GroupBox3.Controls.Add(Me.TxtDescuento)
+        Me.GroupBox3.Controls.Add(Me.TxtSubtotal)
+        Me.GroupBox3.Controls.Add(Me.Label10)
+        Me.GroupBox3.Controls.Add(Me.Label12)
+        Me.GroupBox3.Controls.Add(Me.Label14)
+        Me.GroupBox3.Controls.Add(Me.TxtTotal)
+        Me.GroupBox3.Controls.Add(Me.Label16)
+        Me.GroupBox3.Controls.Add(Me.txtSuma)
+        Me.GroupBox3.Location = New System.Drawing.Point(940, 445)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(287, 181)
+        Me.GroupBox3.TabIndex = 117
+        Me.GroupBox3.TabStop = False
+        '
         'Recibo1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1335, 651)
         Me.Controls.Add(Me.PanelFinal)
+        Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.PanelLiquidar)
         Me.Controls.Add(Me.btnNuevo)
         Me.Controls.Add(Me.btnEliminar)
@@ -1200,16 +1228,10 @@ Partial Class Recibo1
         Me.Controls.Add(Me.txtAnticipo)
         Me.Controls.Add(Me.TxtClienteID)
         Me.Controls.Add(Me.TxtIva)
-        Me.Controls.Add(Me.TxtDescuento)
-        Me.Controls.Add(Me.TxtSubtotal)
-        Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label11)
-        Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.Label14)
         Me.Controls.Add(Me.iva1)
         Me.Controls.Add(Me.StatusStrip1)
-        Me.Controls.Add(Me.TxtTotal)
         Me.Controls.Add(Me.ButtonCancelar)
         Me.Controls.Add(Me.btnImprimir)
         Me.Controls.Add(Me.btnSalir)
@@ -1219,8 +1241,6 @@ Partial Class Recibo1
         Me.Controls.Add(Me.txtAdeudo)
         Me.Controls.Add(Me.btnBuscar)
         Me.Controls.Add(Me.txtDocumentAmount)
-        Me.Controls.Add(Me.Label16)
-        Me.Controls.Add(Me.txtSuma)
         Me.Controls.Add(Me.txtObservaciones)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.GroupBox1)
@@ -1241,6 +1261,8 @@ Partial Class Recibo1
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1340,4 +1362,5 @@ Partial Class Recibo1
     Friend WithEvents Label29 As System.Windows.Forms.Label
     Friend WithEvents Label30 As System.Windows.Forms.Label
     Friend WithEvents Label31 As System.Windows.Forms.Label
+    Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
 End Class

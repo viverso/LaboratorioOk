@@ -208,7 +208,7 @@ Partial Class formDoctores
         Me.txtRegistro.Location = New System.Drawing.Point(745, 57)
         Me.txtRegistro.Name = "txtRegistro"
         Me.txtRegistro.Size = New System.Drawing.Size(145, 20)
-        Me.txtRegistro.TabIndex = 18
+        Me.txtRegistro.TabIndex = 93
         Me.txtRegistro.Visible = False
         '
         'txtNumero
@@ -216,14 +216,14 @@ Partial Class formDoctores
         Me.txtNumero.Location = New System.Drawing.Point(459, 149)
         Me.txtNumero.Name = "txtNumero"
         Me.txtNumero.Size = New System.Drawing.Size(79, 20)
-        Me.txtNumero.TabIndex = 94
+        Me.txtNumero.TabIndex = 99
         '
         'txtCalle
         '
         Me.txtCalle.Location = New System.Drawing.Point(56, 149)
         Me.txtCalle.Name = "txtCalle"
         Me.txtCalle.Size = New System.Drawing.Size(323, 20)
-        Me.txtCalle.TabIndex = 93
+        Me.txtCalle.TabIndex = 98
         '
         'txtMaterno
         '
@@ -245,7 +245,7 @@ Partial Class formDoctores
         Me.ComboBoxEspecialidad.Location = New System.Drawing.Point(309, 102)
         Me.ComboBoxEspecialidad.Name = "ComboBoxEspecialidad"
         Me.ComboBoxEspecialidad.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBoxEspecialidad.TabIndex = 97
+        Me.ComboBoxEspecialidad.TabIndex = 95
         '
         'Label10
         '
@@ -279,14 +279,14 @@ Partial Class formDoctores
         Me.txtCelular.Location = New System.Drawing.Point(711, 102)
         Me.txtCelular.Name = "txtCelular"
         Me.txtCelular.Size = New System.Drawing.Size(145, 20)
-        Me.txtCelular.TabIndex = 99
+        Me.txtCelular.TabIndex = 97
         '
         'txtCOlonia
         '
         Me.txtCOlonia.Location = New System.Drawing.Point(630, 149)
         Me.txtCOlonia.Name = "txtCOlonia"
         Me.txtCOlonia.Size = New System.Drawing.Size(321, 20)
-        Me.txtCOlonia.TabIndex = 95
+        Me.txtCOlonia.TabIndex = 100
         '
         'txtRFC
         '
@@ -332,13 +332,13 @@ Partial Class formDoctores
         '
         'txtCiudad
         '
-        Me.txtCiudad.AutoCompleteCustomSource.AddRange(New String() {"TEHUACAN", "OAXACA", "VERACRUZ", "AJALPAN", "SAN SEBASTIAN", "MIAHUATLAN", "SANTA MARIA COAPAN"})
+        Me.txtCiudad.AutoCompleteCustomSource.AddRange(New String() {"TEHUACAN", "OAXACA", "VERACRUZ", "AJALPAN", "SAN SEBASTIAN", "MIAHUATLAN", "SANTA MARIA COAPAN", "CHILAC", "AJALPAN", "ORIZABA", "HUAUTLA DE JIMENEZ ", "SAN BARTOLO TEONTEPEC", "SANTA CRUZ ACAPA", "SAN LORENZO TEOTIPILCO"})
         Me.txtCiudad.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
         Me.txtCiudad.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
         Me.txtCiudad.Location = New System.Drawing.Point(56, 102)
         Me.txtCiudad.Name = "txtCiudad"
         Me.txtCiudad.Size = New System.Drawing.Size(203, 20)
-        Me.txtCiudad.TabIndex = 96
+        Me.txtCiudad.TabIndex = 94
         '
         'Label11
         '
@@ -363,7 +363,7 @@ Partial Class formDoctores
         Me.txtTelefono.Location = New System.Drawing.Point(507, 103)
         Me.txtTelefono.Name = "txtTelefono"
         Me.txtTelefono.Size = New System.Drawing.Size(145, 20)
-        Me.txtTelefono.TabIndex = 98
+        Me.txtTelefono.TabIndex = 96
         '
         'Label12
         '
@@ -407,7 +407,7 @@ Partial Class formDoctores
         Me.DataGridViewgastos.Location = New System.Drawing.Point(53, 177)
         Me.DataGridViewgastos.Name = "DataGridViewgastos"
         Me.DataGridViewgastos.Size = New System.Drawing.Size(898, 323)
-        Me.DataGridViewgastos.TabIndex = 100
+        Me.DataGridViewgastos.TabIndex = 101
         '
         'formDoctores
         '

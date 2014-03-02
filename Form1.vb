@@ -67,6 +67,8 @@ Public Class formDoctores
         Me.DataGridViewgastos.Columns(1).Width = 350
         Me.DataGridViewgastos.Columns(2).Width = 350
         Me.DataGridViewgastos.Columns(3).Width = 150
+        btnnuevo.Focus()
+
     End Sub
 
     Private Sub btnmodificar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnmodificar.Click
@@ -192,6 +194,7 @@ Public Class formDoctores
         Me.DataGridViewgastos.Columns(3).Width = 150
         ComboBoxEspecialidad.SelectedIndex = 0
         ComboBoxTrabajador.SelectedIndex = 0
+        btnsalir.Focus()
     End Sub
     Function searchDestinatario(ByVal goal As String) As Boolean
         clients = New DataSet()
@@ -239,6 +242,7 @@ Public Class formDoctores
         bloqueaCampos(True)
         limpiarCampos()
         txtNombre.Focus()
+        txtNombre.BackColor = System.Drawing.ColorTranslator.FromOle(&HC0FFC0)
     End Sub
     Private Sub limpiarCampos()
         txtIdDoctor.Text = ""
@@ -298,8 +302,8 @@ Public Class formDoctores
 
     Private Sub ComboBoxTrabajador_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ComboBoxTrabajador.SelectedIndexChanged
         Dim indice As Integer
-        Dim i As Integer
-        Dim indiceEstados, indiceMunicipios, indiceFuncion As Integer
+        'Dim i As Integer
+        'Dim indiceEstados, indiceMunicipios, indiceFuncion As Integer
         If ComboBoxTrabajador.Text.Substring(0, 6) <> "SELECC" Then
 
             txtIdDoctor.Text = ComboBoxTrabajador.Text.Substring(0, 6)
@@ -386,8 +390,8 @@ Public Class formDoctores
 
     Private Sub DataGridViewgastos_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridViewgastos.CellClick
         Dim indice As Integer
-        Dim i As Integer
-        Dim indiceEstados, indiceMunicipios, indiceFuncion As Integer
+        'Dim i As Integer
+        'Dim indiceEstados, indiceMunicipios, indiceFuncion As Integer
         txtIdDoctor.Text = DataGridViewgastos.Rows(DataGridViewgastos.CurrentRow.Index).Cells(0).Value()
         clients = New DataSet()
         queryStringClients = "select * from doctores where IdDoctor= '" & txtIdDoctor.Text & "' and companyID='" & currentCompany & "' order by nombre"
@@ -443,6 +447,78 @@ Public Class formDoctores
 
 
     End Sub
+
+    Private Sub txtNombre_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtNombre.KeyPress
+        If Asc(e.KeyChar) = Keys.Enter Then
+            txtNombre.BackColor = System.Drawing.Color.White
+            txtPaterno.Focus()
+        End If
+    End Sub
+
+    Private Sub txtPaterno_GotFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtPaterno.GotFocus
+        txtNombre.BackColor = System.Drawing.Color.White
+    End Sub
+
+    Private Sub txtPaterno_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtPaterno.KeyPress
+        If Asc(e.KeyChar) = Keys.Enter Then
+            txtMaterno.Focus()
+        End If
+    End Sub
+
+    Private Sub txtRFC_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtRFC.KeyPress
+        If Asc(e.KeyChar) = Keys.Enter Then
+            txtCiudad.Focus()
+        End If
+    End Sub
+
+    Private Sub txtCiudad_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtCiudad.KeyPress
+        If Asc(e.KeyChar) = Keys.Enter Then
+            ComboBoxEspecialidad.Focus()
+        End If
+    End Sub
+
+    Private Sub txtMaterno_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtMaterno.KeyPress
+        If Asc(e.KeyChar) = Keys.Enter Then
+            txtRFC.Focus()
+        End If
+    End Sub
+
+    Private Sub ComboBoxEspecialidad_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles ComboBoxEspecialidad.KeyPress
+        If Asc(e.KeyChar) = Keys.Enter Then
+            txtTelefono.Focus()
+        End If
+    End Sub
+
+    Private Sub txtTelefono_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtTelefono.KeyPress
+        If Asc(e.KeyChar) = Keys.Enter Then
+            txtCelular.Focus()
+        End If
+    End Sub
+
+    Private Sub txtCelular_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtCelular.KeyPress
+        If Asc(e.KeyChar) = Keys.Enter Then
+            txtCalle.Focus()
+        End If
+    End Sub
+
+    Private Sub txtCalle_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtCalle.KeyPress
+        If Asc(e.KeyChar) = Keys.Enter Then
+            txtNumero.Focus()
+        End If
+    End Sub
+
+    Private Sub txtNumero_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtNumero.KeyPress
+        If Asc(e.KeyChar) = Keys.Enter Then
+            txtCOlonia.Focus()
+        End If
+    End Sub
+
+    Private Sub txtCOlonia_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtCOlonia.KeyPress
+        If Asc(e.KeyChar) = Keys.Enter Then
+            btnguardar.Focus()
+        End If
+    End Sub
+
 End Class
 
 

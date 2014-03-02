@@ -17,7 +17,10 @@ Public Class descuentos
         txtporcentaje.ReadOnly = False
         btnSave.Enabled = True
         modi = False
+        txtNombre.Enabled = True
+        txtporcentaje.Enabled = True
         txtNombre.Focus()
+        txtNombre.BackColor = System.Drawing.ColorTranslator.FromOle(&HC0FFC0)
     End Sub
     Private Sub actualiza_tipo_pago(ByVal id_tipo_pago As String, ByVal descripcion As String, ByVal porcentaje As Decimal, ByVal compania As String)
 
@@ -73,7 +76,7 @@ Public Class descuentos
             oParameter = oCommand.Parameters.Add("@IdTipoPago", SqlDbType.VarChar, 2)
             oParameter.Value = id_tipo_pago
             oParameter = oCommand.Parameters.Add("@Descripcion", SqlDbType.VarChar, 30)
-            oParameter.Value = descripcion
+            oParameter.Value = UCase(descripcion)
             oParameter = oCommand.Parameters.Add("@porcentaje", SqlDbType.Decimal, 6 - 2)
             oParameter.Value = porcentaje
             oParameter = oCommand.Parameters.Add("@companyID", SqlDbType.VarChar, 6)
@@ -185,7 +188,7 @@ Public Class descuentos
 
         txtNombre.ReadOnly = True
         txtporcentaje.ReadOnly = True
-
+        btnExit.Focus()
     End Sub
 
     Private Sub btnModifica_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnModifica.Click
@@ -202,6 +205,9 @@ Public Class descuentos
         DataGridViewgastos.Columns(0).Visible = False
         DataGridViewgastos.Columns(3).Visible = False
         DataGridViewgastos.Columns(1).Width = 300
+        txtNombre.Enabled = False
+        txtporcentaje.Enabled = False
+
 
     End Sub
 
@@ -217,4 +223,19 @@ Public Class descuentos
         Me.Close()
     End Sub
 
+    Private Sub txtNombre_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtNombre.KeyPress
+        If Asc(e.KeyChar) = Keys.Enter Then
+            txtNombre.BackColor = System.Drawing.Color.White
+            txtporcentaje.Focus()
+        End If
+    End Sub
+
+    Private Sub txtporcentaje_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtporcentaje.KeyPress
+        If Asc(e.KeyChar) = Keys.Enter Then
+            txtNombre.BackColor = System.Drawing.Color.White
+            btnSave.Focus()
+        End If
+    End Sub
+
+   
 End Class

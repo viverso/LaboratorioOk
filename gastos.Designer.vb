@@ -69,7 +69,8 @@ Partial Class gastos
         '
         Me.txtconcepto.Location = New System.Drawing.Point(112, 78)
         Me.txtconcepto.Name = "txtconcepto"
-        Me.txtconcepto.Size = New System.Drawing.Size(399, 20)
+        Me.txtconcepto.ReadOnly = True
+        Me.txtconcepto.Size = New System.Drawing.Size(682, 20)
         Me.txtconcepto.TabIndex = 0
         '
         'Label3
@@ -85,7 +86,8 @@ Partial Class gastos
         '
         Me.txtimporte.Location = New System.Drawing.Point(112, 113)
         Me.txtimporte.Name = "txtimporte"
-        Me.txtimporte.Size = New System.Drawing.Size(99, 20)
+        Me.txtimporte.ReadOnly = True
+        Me.txtimporte.Size = New System.Drawing.Size(133, 20)
         Me.txtimporte.TabIndex = 1
         '
         'btnGuardar

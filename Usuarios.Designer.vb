@@ -91,14 +91,14 @@ Partial Class Usuarios
         Me.UserType.Items.AddRange(New Object() {"0 - ADMINISTRADOR", "1 - USUARIO"})
         Me.UserType.Location = New System.Drawing.Point(201, 241)
         Me.UserType.Name = "UserType"
-        Me.UserType.Size = New System.Drawing.Size(145, 21)
+        Me.UserType.Size = New System.Drawing.Size(162, 21)
         Me.UserType.TabIndex = 5
         '
         'TxtPassConfirm
         '
         Me.TxtPassConfirm.Location = New System.Drawing.Point(200, 205)
         Me.TxtPassConfirm.Name = "TxtPassConfirm"
-        Me.TxtPassConfirm.Size = New System.Drawing.Size(257, 20)
+        Me.TxtPassConfirm.Size = New System.Drawing.Size(163, 20)
         Me.TxtPassConfirm.TabIndex = 4
         Me.TxtPassConfirm.UseSystemPasswordChar = True
         '
@@ -119,7 +119,7 @@ Partial Class Usuarios
         '
         Me.TxtPass.Location = New System.Drawing.Point(200, 170)
         Me.TxtPass.Name = "TxtPass"
-        Me.TxtPass.Size = New System.Drawing.Size(257, 20)
+        Me.TxtPass.Size = New System.Drawing.Size(163, 20)
         Me.TxtPass.TabIndex = 3
         Me.TxtPass.UseSystemPasswordChar = True
         '

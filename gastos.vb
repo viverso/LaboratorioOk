@@ -90,6 +90,7 @@ Public Class gastos
 
         txtconcepto.ReadOnly = True
         txtimporte.ReadOnly = True
+        btnSalir.Focus()
 
     End Sub
 
@@ -139,7 +140,7 @@ Public Class gastos
             oParameter = oCommand.Parameters.Add("@fecha", SqlDbType.Date)
             oParameter.Value = fecha
             oParameter = oCommand.Parameters.Add("@concepto", SqlDbType.VarChar, 80)
-            oParameter.Value = concepto
+            oParameter.Value = UCase(concepto)
             oParameter = oCommand.Parameters.Add("@importe", SqlDbType.Decimal, 8 - 2)
             oParameter.Value = importe
             oParameter = oCommand.Parameters.Add("@usuario", SqlDbType.VarChar, 20)
@@ -202,20 +203,22 @@ Public Class gastos
 
     Private Sub gastos_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Try
-            Me.btnGuardar.Enabled = False
-            txtconcepto.Text = ""
-            txtimporte.Text = ""
-            txtconcepto.ReadOnly = True
-            txtimporte.ReadOnly = True
+            'Me.btnGuardar.Enabled = False
+            'txtconcepto.Text = ""
+            'txtimporte.Text = ""
+            'txtconcepto.ReadOnly = True
+            'txtimporte.ReadOnly = True
             ''DataGridViewgastos.Rows.Add(1)
             DataGridViewgastos.DataSource = cargaConceptosDatagridGASTOS(currentUser, Now.Date)
             Me.DataGridViewgastos.Columns("0").Visible = False
             Me.DataGridViewgastos.Columns("3").Visible = False
+            txtconcepto.Enabled = False
+            txtimporte.Enabled = False
 
         Catch ex As Exception
 
         End Try
-
+        btnNuevo.Focus()
     End Sub
 
     Private Sub btnNuevo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNuevo.Click
@@ -223,13 +226,23 @@ Public Class gastos
         txtimporte.Text = ""
         txtconcepto.ReadOnly = False
         txtimporte.ReadOnly = False
+        txtconcepto.Enabled = True
+        txtimporte.Enabled = True
+
+
         btnGuardar.Enabled = True
         txtconcepto.Focus()
+        txtconcepto.BackColor = System.Drawing.ColorTranslator.FromOle(&HC0FFC0)
+    End Sub
+
+    Private Sub txtimporte_GotFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtimporte.GotFocus
+        txtimporte.BackColor = System.Drawing.Color.White
     End Sub
 
 
     Private Sub txtconcepto_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtconcepto.KeyPress
         If Asc(e.KeyChar) = 13 Then
+            txtconcepto.BackColor = System.Drawing.Color.White
             txtimporte.Focus()
         End If
     End Sub
@@ -301,5 +314,13 @@ Public Class gastos
             'Finally
             'System.Windows.Forms.MessageBox.Show(ex.Message.ToString + " " + "error")
         End Try
+    End Sub
+
+    Private Sub txtimporte_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtimporte.TextChanged
+
+    End Sub
+
+    Private Sub txtconcepto_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtconcepto.TextChanged
+
     End Sub
 End Class

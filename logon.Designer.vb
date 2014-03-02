@@ -69,19 +69,21 @@ Partial Class logon
         '
         'ButtonCancelar
         '
+        Me.ButtonCancelar.BackColor = System.Drawing.SystemColors.Control
+        Me.ButtonCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.ButtonCancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonCancelar.Image = CType(resources.GetObject("ButtonCancelar.Image"), System.Drawing.Image)
-        Me.ButtonCancelar.Location = New System.Drawing.Point(343, 368)
+        Me.ButtonCancelar.Location = New System.Drawing.Point(350, 357)
         Me.ButtonCancelar.Name = "ButtonCancelar"
         Me.ButtonCancelar.Size = New System.Drawing.Size(80, 80)
         Me.ButtonCancelar.TabIndex = 32
-        Me.ButtonCancelar.UseVisualStyleBackColor = True
+        Me.ButtonCancelar.UseVisualStyleBackColor = False
         '
         'ButtonAceptar
         '
         Me.ButtonAceptar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonAceptar.Image = CType(resources.GetObject("ButtonAceptar.Image"), System.Drawing.Image)
-        Me.ButtonAceptar.Location = New System.Drawing.Point(236, 368)
+        Me.ButtonAceptar.Location = New System.Drawing.Point(248, 357)
         Me.ButtonAceptar.Name = "ButtonAceptar"
         Me.ButtonAceptar.Size = New System.Drawing.Size(80, 80)
         Me.ButtonAceptar.TabIndex = 31

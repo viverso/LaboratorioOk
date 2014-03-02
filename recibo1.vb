@@ -66,6 +66,7 @@ Public Class Recibo1
     End Function
     Private Sub TextBoxNombre_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TextBoxNombre.KeyPress
         If Asc(e.KeyChar) = Keys.Enter Then
+            TextBoxNombre.BackColor = System.Drawing.Color.White
             ComboBoxDoctores.Focus()
         End If
     End Sub
@@ -270,10 +271,6 @@ Public Class Recibo1
             guarda_corte(i + consecutivo, cortegastos.Tables(0).Rows(i).Item(0), cortegastos.Tables(0).Rows(i).Item(2), 0, 0, cortegastos.Tables(0).Rows(i).Item(3), cortegastos.Tables(0).Rows(i).Item(1), currentUser, currentCompany)
         Next
 
-
-
-
-
         connectioncortegastos.Close()
         cortegastos.Clear()
     End Sub
@@ -281,7 +278,7 @@ Public Class Recibo1
         Dim anticipos1 As DataSet
         Dim connectionanticipos1 As SqlConnection
         Dim adapteranticipos1 As SqlDataAdapter
-        ' Dim totalanticipos1 As Integer 0
+        'Dim totalanticipos1 As Integer 0
         Dim commandanticipos1 As SqlCommand
         Dim cmdBuilderanticipos1 As SqlCommandBuilder
         Try
@@ -312,12 +309,6 @@ Public Class Recibo1
             cmdBuilderanticipos1.Dispose()
         End Try
 
-
-
-
-
-
-      
     End Function
     Function checaAnticipofechas(ByVal folio As String, ByVal fechas As Date) As Decimal
         totalanticipos = 0
@@ -830,6 +821,7 @@ Public Class Recibo1
         ButtonCancelar.Enabled = False
         AutoCompletar(txtSexo)
         chkcostos.Checked = True
+        btnNuevo.Focus()
     End Sub
     Function LoadCliente() As Boolean
         PermanentDB1 = New DataSet()
@@ -1013,14 +1005,14 @@ Public Class Recibo1
             invoiceHeaders.Tables(0).Rows(0).Item(11) = currentUser
             invoiceHeaders.Tables(0).Rows(0).Item(12) = currentCompany
             invoiceHeaders.Tables(0).Rows(0).Item(13) = lblfoliorecibo.Text
-            invoiceHeaders.Tables(0).Rows(0).Item(14) = TextBoxNombre.Text
-            invoiceHeaders.Tables(0).Rows(0).Item(15) = TxtCiudad.Text
+            invoiceHeaders.Tables(0).Rows(0).Item(14) = UCase(TextBoxNombre.Text)
+            invoiceHeaders.Tables(0).Rows(0).Item(15) = UCase(TxtCiudad.Text)
             invoiceHeaders.Tables(0).Rows(0).Item(16) = TxtTelefono.Text
             invoiceHeaders.Tables(0).Rows(0).Item(17) = txtSexo.Text
             invoiceHeaders.Tables(0).Rows(0).Item(18) = TxtEdad.Text
-            invoiceHeaders.Tables(0).Rows(0).Item(19) = RCF.Text
+            invoiceHeaders.Tables(0).Rows(0).Item(19) = UCase(RCF.Text)
             invoiceHeaders.Tables(0).Rows(0).Item(20) = ComboBoxDoctores.Text.Substring(0, ComboBoxDoctores.Text.Length - 6)
-            invoiceHeaders.Tables(0).Rows(0).Item(21) = txtObservaciones.Text
+            invoiceHeaders.Tables(0).Rows(0).Item(21) = UCase(txtObservaciones.Text)
 
             ' invoiceHeaders.Tables(0).Rows(0).Item(11) = TxtDireccion.Text & " " & TxtNumero.Text & " " & TxtColonia.Text
             adapterInvoiceHeaders.Update(invoiceHeaders, "recibo1")
@@ -1053,8 +1045,8 @@ Public Class Recibo1
                 '  invoiceRows1.Tables(0).Rows(i).Item(2) = DateTimePickerFecha.Text 'fecha
                 invoiceRows1.Tables(0).Rows(i).Item(1) = DataGridView1.Rows(i).Cells("clave").Value.ToString 'CODIGO DE PRODUCTO
                 invoiceRows1.Tables(0).Rows(i).Item(2) = DataGridView1.Rows(i).Cells("descripcion").Value.ToString 'CANTIDAD
-                invoiceRows1.Tables(0).Rows(i).Item(3) = DataGridView1.Rows(i).Cells("tiempo").Value.ToString 'PESCRIPCION
-                invoiceRows1.Tables(0).Rows(i).Item(4) = DataGridView1.Rows(i).Cells("proceso").Value.ToString 'PRECIO UNITARIO
+                invoiceRows1.Tables(0).Rows(i).Item(3) = UCase((DataGridView1.Rows(i).Cells("tiempo").Value.ToString)) 'PESCRIPCION
+                invoiceRows1.Tables(0).Rows(i).Item(4) = UCase(DataGridView1.Rows(i).Cells("proceso").Value.ToString) 'PRECIO UNITARIO
                 invoiceRows1.Tables(0).Rows(i).Item(5) = DataGridView1.Rows(i).Cells("importe").Value.ToString 'IMPORTE
 
                 invoiceRows1.Tables(0).Rows(i).Item(6) = CType(i.ToString, Integer)
@@ -1076,14 +1068,7 @@ Public Class Recibo1
             commandinvoiceRows.Dispose()
             cmdBuilderinvoiceRows.Dispose()
 
-
-
-
             ' frmRemisiones.Show() ' la remsion
-
-
-
-
 
             lastUsed1 = 0
 
@@ -1214,6 +1199,7 @@ Public Class Recibo1
 
         Temp = Format(Temp, "##,##0.00")
         txtSuma.Text = Temp
+
         ' SubTotal.Text = Temp.ToString()
         TxtSubtotal.Text = Format((Temp - tempIVa), "##,##0.00")
         TempSubtotal = Temp * iva
@@ -1843,6 +1829,7 @@ Public Class Recibo1
             If ComboBoxtipoPago.Text.Substring(0, 2) = "01" Then
                 TextDESC.ReadOnly = True
                 TextDESC.Text = descuento_d
+
                 TxtDescuento.Text = (txtSuma.Text) * (TextDESC.Text / 100)
                 TxtTotal.Text = Format$(txtSuma.Text - (txtSuma.Text) * (TextDESC.Text / 100), "###,##0.00")
 
@@ -2054,7 +2041,7 @@ Public Class Recibo1
                             txtAnticipo.Visible = False
                             txtAdeudo.Text = " "
                             txtAdeudo.Visible = False
-                            txtestadorecib.Text = "LIQUIDADO..."
+                            txtestadorecib.Text = "RECIBO LIQUIDADO..."
                             txtestadorecib.Visible = True
                         End If
                     End If
@@ -2212,7 +2199,7 @@ Public Class Recibo1
                                 txtAnticipo.Visible = False
                                 txtAdeudo.Text = " "
                                 txtAdeudo.Visible = False
-                                txtestadorecib.Text = "LIQUIDADO..."
+                                txtestadorecib.Text = "RECIBO LIQUIDADO..."
                                 txtestadorecib.Visible = True
                             End If
                         End If
@@ -2400,8 +2387,8 @@ Public Class Recibo1
 
     End Sub
 
-    Private Sub ComboBoxDoctores_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ComboBoxDoctores.SelectedIndexChanged
-
+    Private Sub ComboBoxDoctores_GotFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles ComboBoxDoctores.GotFocus
+        TextBoxNombre.BackColor = System.Drawing.Color.White
     End Sub
 
     Private Sub btnAceptarLiquidacion_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAceptarLiquidacion.Click
@@ -2885,7 +2872,8 @@ Public Class Recibo1
 
         lastUsed1 = 0
 
-        TextBoxNombre.BackColor = Color.GreenYellow
+        'TextBoxNombre.BackColor = Color.GreenYellow
+        TextBoxNombre.BackColor = System.Drawing.ColorTranslator.FromOle(&HC0FFC0)
         folio_antes()
     End Sub
 
